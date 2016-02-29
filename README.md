@@ -13,13 +13,13 @@ chmod 750 /var/spool/filter -R
 Fix virtual maps to redurect message to special virtual domain:
 ```sh
 cat /etc/postfix/virtual
-  noreply@e-kontur.ru     noreply@autoreply.e-kontur.ru
+  noreply@domain.ru     noreply@autoreply.domain.ru
 postmap virtual
 ```
 Fix transport to redirect messages from specila domain to filter-relay:
 ```sh
 cat /etc/postfix/virtual
-  autoreply.e-kontur.ru autoreply:
+  autoreply.domain.ru autoreply:
 postmap transport
 ```
 Enable this settings in main.cf:
